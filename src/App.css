@@ -35,8 +35,7 @@
 .characters {
   display        : flex;
   flex-wrap      : wrap;
-  gap       : 16px;
-  justify-content: left;
+  margin-top: 10px;
 
 
 }
@@ -130,8 +129,9 @@
 
 .section-character {
   position: relative;
-  width: 200px;
+  width: 170px;
   height: 200px;
+  margin: 8px;
 
 }
 
@@ -226,5 +226,13 @@
 
   .characters img{
     max-width: 200px;
+  }
+
+  .section-character{
+    width: 200px;
+  }
+
+  .characters {
+   
   }
 }
