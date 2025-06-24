@@ -1,9 +1,10 @@
 .App {
-  text-align: center;
+  text-align      : center;
+  background-color: #272b33;
 }
 
 .App-logo {
-  height: 40vmin;
+  height        : 40vmin;
   pointer-events: none;
 }
 
@@ -15,24 +16,215 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height      : 100vh;
+  align-items     : center;
+  justify-content : left;
+  font-size       : calc(10px + 2vmin);
+  color           : white;
+
+
+
+}
+
+.container-characters{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+ align-items: center;
+}
+
+.characters {
+  display        : flex;
+  flex-wrap      : wrap;
+  gap       : 16px;
+  justify-content: left;
+
+
+}
+
+.section-character {
+  width         : 600px;
+  display       : flex;
+  flex-direction: column;
+
+}
+
+.info-persoje {
+  display       : flex;
+  flex-direction: column;
+  text-align    : left;
+  margin-left   : 10px;
+
+  label {
+    display  : flex;
+    padding  : 0 10px;
+    font-size: 18px;
+
+    span {
+      padding-left: 8px;
+    }
+  }
+
+}
+
+.name-character{
   color: white;
+  margin: 8px 0;
+}
+
+.alive {
+  color: green;
+}
+
+.dead {
+  color: red;
+}
+
+.unknown {
+  color: yellow;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background-color: #333;
+  color: #fff;
+  z-index: 1000; 
+}
+
+.header__logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header__nav .header__menu {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+}
+
+.header__menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header__button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.header__button:hover {
+  background-color: #0056b3;
+}
+
+.section-character {
+  position: relative;
+  width: 200px;
+  height: 200px;
+
+}
+
+.image-personaje,
+.info-personaje {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+.info-personaje {
+  background-color: #333;
+  color: white;
+  opacity: 0;
+}
+
+.section-character:hover .info-personaje {
+  opacity: 1;
+}
+
+.image-personaje img{
+    width    : 100%;
+    height   : 100%;
+}
+
+.info-personaje,
+.image-personaje img,
+.image-personaje{
+  border-radius : 8px;
+}
+
+.info-personaje{
+  display: flex;
+  flex-direction: column;
+}
+
+.info-personaje p{
+  margin: 4px 0;
+}
+
+.container{
+  height: 100vh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+
+  .section-character{
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  
+  }
+  
+  .section-character>div{
+    backface-visibility: hidden;
+  }
+  
+  
+  .info-personaje{
+    transform: rotateY(180deg);
+    opacity: 1;
+  
+  }
+  
+  .section-character:hover{
+    transform: rotateY(180deg);
+  }
+  
+  
+  }
+
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 1026px) {
+
+
+  .section-character {
+    flex-direction: row;
+  }
+
+  .characters img{
+    max-width: 200px;
   }
 }
